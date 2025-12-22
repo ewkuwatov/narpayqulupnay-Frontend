@@ -20,7 +20,7 @@ export default function Hero() {
           priority
           className="w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/40 to-primary/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b via-primary/40 to-primary/80 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
