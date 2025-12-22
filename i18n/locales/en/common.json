@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "contact": "Contact us",
+    "order": "Order",
+    "region": "Samarkand region, Narpay district"
+  },
+  "hero": {
+    "bgAlt": "Strawberry farm background",
+    "tagline": "Eco Product",
+    "titleMain": "Fresh Strawberries",
+    "titleSub": "Directly from the farm",
+    "description1": "Grown with love under the Narpay sun.",
+    "description2": "Perfect balance of sweetness and aroma.",
+    "description3": "Harvested at dawn — delivered to your table.",
+    "ctaOrder": "Order Now",
+    "ctaProducts": "View Varieties"
+  },
+  "benefits": {
+    "sectionTag": "Why Us?",
+    "sectionTitle": "Quality in Every Berry",
+    "sunRegionTitle": "Sunny Region",
+    "sunRegionDesc": "Our fields are located in Narpay with over 300 sunny days per year.",
+    "cleanWaterTitle": "Clean Water",
+    "cleanWaterDesc": "Irrigation is done with artesian water without chemicals.",
+    "morningHarvestTitle": "Morning Harvest",
+    "morningHarvestDesc": "Berries are picked from 5 to 9 AM to ensure maximum freshness.",
+    "withLoveTitle": "With Love",
+    "withLoveDesc": "Family business where every bush is personally monitored."
+  },
+  "products": {
+    "sectionTag": "Our Harvest",
+    "sectionTitle": "Best Varieties of the Season",
+    "albion": {
+      "name": "Albion",
+      "desc": "Remontant variety with large, sweet conical berries. Dense flesh and unique aroma.",
+      "tags": { "sweet": "Sweet", "big": "Big" }
+    },
+    "clery": {
+      "name": "Clery",
+      "desc": "Early Italian variety. Correct shape, bright red berries, excellent sugar-acid balance.",
+      "tags": { "early": "Early", "aromatic": "Aromatic" }
+    },
+    "asia": {
+      "name": "Asia",
+      "desc": "Mid-early variety with huge berries. Rich, dessert-like flavor with strawberry aftertaste.",
+      "tags": { "dessert": "Dessert", "juicy": "Juicy" }
+    },
+    "details": "Learn More",
+    "consultationText": "Want to know more about our cultivation methods?",
+    "consultationBtn": "Get Consultation"
+  },
+  "about": {
+    "title": "About Us",
+    "heading": {
+      "part1": "Traditions of Taste",
+      "part2": "since 2015"
+    },
+    "paragraph1": {
+      "before": "We started from a small family plot in sunny Narpay. Today ",
+      "brand": "Narpay Qulupnay",
+      "after": " is a modern agroholding where farming traditions meet advanced technologies."
+    },
+    "paragraph2": "Our mission is simple: to grow strawberries you can safely give to your children. No harsh chemicals, just sun, clean water, and care.",
+    "features": {
+      "fields": "Own fields in an eco-friendly zone",
+      "quality": "Quality control at every stage",
+      "cooling": "Cooling berries immediately after harvest"
+    },
+    "images": {
+      "farmerAlt": "Farmer in strawberry field",
+      "strawberriesAlt": "Fresh strawberries in hands"
+    },
+    "founder": {
+      "alt": "Founder",
+      "name": "Akram Eshkuvvatov",
+      "role": "Farm Manager"
+    }
+  },
+  "cta": {
+    "title": "Leave a Request",
+    "name": "Name",
+    "phone": "Phone",
+    "submit": "Send"
+  },
+  "partners": {
+    "title": "Quality Guarantee",
+    "subtitle": "All products are certified and meet international standards",
+    "button": "View Documents",
+    "eco": "Eco Certificate",
+    "halal": "Halal",
+    "halalSub": "Quality Standard",
+    "bestExporter": "Best Exporter",
+    "globalGAP": "Global GAP",
+    "globalGAPSub": "Safety"
+  },
+  "footer": {
+    "contacts": "Contacts",
+    "addressTitle": "Farm Address",
+    "address": "Samarkand region, Narpay district,\nMukhimiy MFY 127",
+    "emailTitle": "Email",
+    "phoneTitle": "Phone",
+    "navigation": "Navigation",
+    "social": "Follow Us",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "offer": "Public Offer"
+  }
+}

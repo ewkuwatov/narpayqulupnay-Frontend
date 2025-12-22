@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "products": "Navlar",
+    "blog": "Blog",
+    "gallery": "Galereya",
+    "contact": "Ariza qoldirish",
+    "order": "Buyurtma berish",
+    "region": "Samarqand vil., Narpay tum."
+  },
+  "hero": {
+    "bgAlt": "Qulupnay ekilgan fermaning fon rasmi",
+    "tagline": "Ekologik mahsulot",
+    "titleMain": "Yangi qulupnay",
+    "titleSub": "to‘g‘ridan-to‘g‘ri fermadan",
+    "description1": "Narpay quyoshida muhabbat bilan yetishtirilgan.",
+    "description2": "Shirinlik va hidi mukammal muvozanatda.",
+    "description3": "Tongda yig‘iladi — stolingizga yetkaziladi.",
+    "ctaOrder": "Buyurtma berish",
+    "ctaProducts": "Navlarni ko‘rish"
+  },
+  "benefits": {
+    "sectionTag": "Nima uchun biz?",
+    "sectionTitle": "Har bir mevada sifat",
+    "sunRegionTitle": "Quyoshli hudud",
+    "sunRegionDesc": "Bizning maydonlarimiz Narpayda joylashgan, yiliga 300 dan ortiq quyoshli kunlar bilan.",
+    "cleanWaterTitle": "Toza suv",
+    "cleanWaterDesc": "Sug‘orish artizian suvi bilan, kimyoviy qo‘shimchalarsiz amalga oshiriladi.",
+    "morningHarvestTitle": "Tonggi yig‘im",
+    "morningHarvestDesc": "Meva soat 5 dan 9 gacha yig‘iladi, maksimal yangiligi saqlanadi.",
+    "withLoveTitle": "Muhabbat bilan",
+    "withLoveDesc": "Har bir buta shaxsiy nazorat ostida bo‘lgan oilaviy ish."
+  },
+  "products": {
+    "sectionTag": "Bizning hosil",
+    "sectionTitle": "Mavsumning eng yaxshi navlari",
+    "albion": {
+      "name": "Albion",
+      "desc": "Katta, shirin, konus shaklidagi mevalar bilan remontant nav. Qattiq go‘sht va o‘ziga xos hidi bilan ajralib turadi.",
+      "tags": { "sweet": "Shirin", "big": "Katta" }
+    },
+    "clery": {
+      "name": "Kleri",
+      "desc": "Erta italiyalik nav. Mevalar to‘g‘ri shaklda, yorqin-qizil rangda, shakar va kislota mukammal muvozanat bilan.",
+      "tags": { "early": "Erta", "aromatic": "Xushbo‘y" }
+    },
+    "asia": {
+      "name": "Osiyo",
+      "desc": "O‘rtacha erta nav, katta mevalar bilan. Ta’mi boy, desertga o‘xshash, qulupnay ta’mi bilan.",
+      "tags": { "dessert": "Desertga mos", "juicy": "Sharbatli" }
+    },
+    "details": "Batafsil",
+    "consultationText": "Bizning yetishtirish texnologiyalari haqida ko‘proq bilmoqchimisiz?",
+    "consultationBtn": "Maslahat olish"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "heading": {
+      "part1": "Ta’m an’analari",
+      "part2": "2015 yildan beri"
+    },
+    "paragraph1": {
+      "before": "Biz kichik oilaviy maydonda Narpay quyoshida ish boshladik. Bugun ",
+      "brand": "Narpay Qulupnay",
+      "after": " — bu zamonaviy agrofirmadir, yer ishlash an’analari ilg‘or texnologiyalar bilan uchrashadi."
+    },
+    "paragraph2": "Bizning maqsadimiz oddiy: bolalaringizga berishga xavfsiz qulupnay yetishtirish. Hech qanday agressiv kimyoviy moddalar yo‘q, faqat quyosh, toza suv va g‘amxo‘rlik.",
+    "features": {
+      "fields": "Ekologik toza hududdagi o‘z maydonlarimiz",
+      "quality": "Har bir bosqichda sifat nazorati",
+      "cooling": "Meva yig‘ilgandan so‘ng darhol sovutish"
+    },
+    "images": {
+      "farmerAlt": "Qulupnay maydonida fermer",
+      "strawberriesAlt": "Qo‘lda yangi qulupnay"
+    },
+    "founder": {
+      "alt": "Asoschi",
+      "name": "Akram Eshquvvatov",
+      "role": "Fermani boshqaruvchi"
+    }
+  },
+  "cta": {
+    "title": "Ariza qoldirish",
+    "name": "Ism",
+    "phone": "Telefon",
+    "submit": "Yuborish"
+  },
+  "partners": {
+    "title": "Sifat kafolati",
+    "subtitle": "Barcha mahsulotlar sertifikatlangan va standartlarga mos",
+    "button": "Hujjatlarni ko‘rish",
+    "eco": "EKO Sertifikat",
+    "halal": "Halol",
+    "halalSub": "Sifat standarti",
+    "bestExporter": "Eng yaxshi eksportyor",
+    "globalGAP": "Global GAP",
+    "globalGAPSub": "Xavfsizlik"
+  },
+  "footer": {
+    "contacts": "Kontaktlar",
+    "addressTitle": "Fermaning manzili",
+    "address": "Samarqand vil., Narpay tum.,\nMuqimiy MFY 127",
+    "emailTitle": "Email",
+    "phoneTitle": "Telefon",
+    "navigation": "Navigatsiya",
+    "social": "Ijtimoiy tarmoqlarda biz",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "privacy": "Maxfiylik siyosati",
+    "offer": "Ochiq shartnoma"
+  }
+}
