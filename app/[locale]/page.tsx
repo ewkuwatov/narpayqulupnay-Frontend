@@ -7,7 +7,6 @@ import About from '@/components/About'
 import Wave2 from '@/components/Wave2'
 import Benefits from '@/components/Benefits'
 import Products from '@/components/Products'
-import CTA from '@/components/CTA'
 import Partners from '@/components/Partners'
 import Footer from '@/components/Footer'
 
@@ -29,7 +28,6 @@ export default async function Page({
       <Wave />
       <About />
       <Wave2 />
-      <CTA />
       <Wave />
       <Partners />
       <Wave2 />

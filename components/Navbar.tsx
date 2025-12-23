@@ -1,3 +1,4 @@
+// Navbar.tsx
 'use client'
 
 import React, { useState, useEffect, useMemo } from 'react'
@@ -6,24 +7,27 @@ import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import { usePathname, useRouter } from 'next/navigation'
 import '@/i18n/client'
+import CTA from './CTA'
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const pathname = usePathname()
   const router = useRouter()
 
+  const [openLang, setOpenLang] = useState(false)
+  const [openForm, setOpenForm] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Синхронизация языка с URL
   useEffect(() => {
     const locale = pathname.split('/')[1] || 'en'
-    if (i18n.language !== locale) {
-      i18n.changeLanguage(locale)
-    }
+    if (i18n.language !== locale) i18n.changeLanguage(locale)
   }, [pathname, i18n])
 
-  // Обновляем navItems при смене языка
+  useEffect(() => {
+    document.body.style.overflow = openForm ? 'hidden' : 'auto'
+  }, [openForm])
+
   const navItems = useMemo(
     () => [
       { href: '#', label: t('nav.home') },
@@ -32,21 +36,20 @@ export default function Navbar() {
       { href: '#blog', label: t('nav.blog') },
       { href: '#gallery', label: t('nav.gallery') },
     ],
-    [i18n.language, t]
+    [t]
   )
 
-  // Обработчик переключения языка (ru → en → uz → ru)
-  const switchLanguage = () => {
+  const switchLanguage = (lang?: string) => {
     const languages = ['ru', 'en', 'uz']
-    const currentIndex = languages.indexOf(i18n.language)
-    const nextIndex = (currentIndex + 1) % languages.length
-    const nextLocale = languages[nextIndex]
+    const next =
+      lang ||
+      languages[(languages.indexOf(i18n.language) + 1) % languages.length]
 
     const segments = pathname.split('/')
-    segments[1] = nextLocale
+    segments[1] = next
     router.push(segments.join('/'))
-
-    i18n.changeLanguage(nextLocale)
+    i18n.changeLanguage(next)
+    setOpenLang(false)
   }
 
   useEffect(() => {
@@ -64,7 +67,6 @@ export default function Navbar() {
             : 'bg-gradient-to-b from-black/70 to-transparent py-2'
         }`}
       >
-        {/* Top Bar */}
         <div
           className={`transition-all duration-500 overflow-hidden ${
             isScrolled ? 'max-h-0 opacity-0' : 'max-h-12 opacity-100'
@@ -72,7 +74,7 @@ export default function Navbar() {
         >
           <div className="max-w-7xl mx-auto px-2 py-2 flex justify-between text-xs md:text-sm text-surface font-medium">
             <div className="flex gap-6">
-              <div className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer">
+              <div className="flex items-center gap-2">
                 <Mail size={14} />
                 <a href="mailto:info@narpayqulupnay.uz">
                   info@narpayqulupnay.uz
@@ -84,17 +86,13 @@ export default function Navbar() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 hover:text-accent transition-colors cursor-pointer">
-                <Phone size={14} />
-                <a href="tel:+998973222379">+998 (97) 322-23-79</a>
-              </div>
+              <Phone size={14} />
+              <a href="tel:+998973222379">+998 (97) 322-23-79</a>
             </div>
           </div>
         </div>
-
-        {/* Main Navigation */}
         <div className="max-w-7xl mx-auto h-20 flex items-center justify-between">
-          <a href="" className="relative z-50 flex items-center gap-2 group">
+          <a href="" className="relative z-50">
             <Image
               id="navbar-logo"
               src="/images/logo6.png"
@@ -105,102 +103,59 @@ export default function Navbar() {
             />
           </a>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8">
-            {navItems.map((item) => (
+            {navItems.map((i) => (
               <a
-                key={item.href}
-                href={item.href}
-                className={`relative text-sm font-bold tracking-wide uppercase transition-colors duration-300 
-                  ${
-                    isScrolled
-                      ? 'text-surface hover:text-accent'
-                      : 'text-surface/70 hover:text-accent'
-                  }
-                  after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 
-                  after:bg-accent after:transition-all after:duration-300 hover:after:w-full
-                `}
+                key={i.href}
+                href={i.href}
+                className="text-sm font-bold uppercase text-surface/80 hover:text-accent transition"
               >
-                {item.label}
+                {i.label}
               </a>
             ))}
           </nav>
 
-          {/* Right Actions */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6 relative">
             <button
-              onClick={switchLanguage}
-              className={`flex items-center gap-1 text-xs font-bold transition-colors ${
-                isScrolled
-                  ? 'text-surface/70 hover:text-accent'
-                  : 'text-surface/70 hover:text-accent'
-              }`}
+              onClick={() => setOpenLang(!openLang)}
+              className="flex items-center gap-1 text-xs font-bold text-surface/70 hover:text-accent"
             >
               <Globe size={16} />
-              <span>{i18n.language.toUpperCase()}</span>
+              {i18n.language.toUpperCase()}
             </button>
 
-            <a
-              href="#contact"
-              className="bg-danger hover:bg-red-600 text-white px-7 py-3 rounded-full text-sm font-bold shadow-lg shadow-danger/30 transition-all transform hover:-translate-y-0.5 active:scale-95"
+            {openLang && (
+              <ul className="absolute w-36 text-center top-full -left-12 mt-2 bg-primary rounded-lg shadow-xl overflow-hidden">
+                {['ru', 'en', 'uz'].map((l) => (
+                  <li
+                    key={l}
+                    onClick={() => switchLanguage(l)}
+                    className="px-4 py-2 cursor-pointer text-surface text-sm hover:bg-secondary/30"
+                  >
+                    {l.toUpperCase()}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <button
+              onClick={() => setOpenForm(true)}
+              className="bg-danger text-surface px-7 py-3 rounded-full text-sm font-bold hover:bg-danger/70 hover:text-accent"
             >
               {t('nav.contact')}
-            </a>
+            </button>
           </div>
 
-          {/* Mobile Toggle */}
           <button
-            className={`md:hidden z-50 p-2 rounded-lg transition-colors ${
-              isScrolled
-                ? 'text-primary hover:bg-primary/10'
-                : 'text-white hover:bg-white/20'
-            }`}
+            className="md:hidden z-50 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed inset-0 z-40 bg-primary/95 backdrop-blur-xl md:hidden transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen
-            ? 'opacity-100 visible'
-            : 'opacity-0 invisible pointer-events-none'
-        }`}
-      >
-        <div className="h-full flex flex-col items-center justify-center p-8 space-y-8">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-3xl font-serif text-surface hover:text-accent transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
-
-          <div className="w-12 h-px bg-surface/20 my-4" />
-
-          <a
-            href="#contact"
-            className="bg-danger text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl shadow-danger/20"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            {t('nav.order')}
-          </a>
-
-          <button
-            onClick={switchLanguage}
-            className="flex items-center gap-2 text-surface text-lg font-bold"
-          >
-            <Globe size={20} />
-            {i18n.language.toUpperCase()}
-          </button>
-        </div>
-      </div>
+      {openForm && <CTA onClose={() => setOpenForm(false)} />}
     </>
   )
 }
